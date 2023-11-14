@@ -1,7 +1,18 @@
 {
   "name": "goof",
-  "scripts": {
-  },
+  "description": "A Vulnmap vulnerable Goof app on Heroku",
+  "repository": "https://github.com/khulnasoft-lab/vulnmap-goof",
+  "logo": "https://khulnasoft.com/wp-content/uploads/title-card-avatar.png",
+  "keywords": [
+    "vulnmap",
+    "goof",
+    "heroku",
+    "node",
+    "security",
+    "vulnerabilities"
+  ],
+  "image": "heroku/nodejs",
+  "scripts": {},
   "env": {
     "MONGOLAB_URI": {
       "required": true
