@@ -1,0 +1,17 @@
+name: "vulnmap test"
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: vulnmap/actions/setup@master
+      - name: Vulnmap Test
+        run: vulnmap test --sarif-file-output=vulnmap-sarif1.json
+        continue-on-error: true
+        env:
+           VULNMAP_TOKEN: ${{ secrets.VULNMAP_TOKEN }}
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: vulnmap-sarif1.json
