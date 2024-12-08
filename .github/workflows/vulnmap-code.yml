@@ -4,7 +4,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: khulnasoft-lab/actions/setup@master
       - name: Vulnmap Test
         run: vulnmap code test --org=${{ secrets.VULNMAP_ORG }} --sarif > vulnmap-sarif2.json
